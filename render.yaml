@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: whiteboard-backend
+    env: node
+    plan: free
+    buildCommand: cd Backend && npm install
+    startCommand: cd Backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # Add these in Render dashboard:
+      # - key: MONGO_URL
+      #   value: your-mongodb-connection-string
+      # - key: JWT_SECRET
+      #   value: your-jwt-secret
+      # - key: JWT_REFRESH_SECRET
+      #   value: your-jwt-refresh-secret
+      # - key: FRONTEND_URL
+      #   value: https://your-vercel-app.vercel.app
+      # - key: SOCKET_CORS_ORIGIN
+      #   value: https://your-vercel-app.vercel.app

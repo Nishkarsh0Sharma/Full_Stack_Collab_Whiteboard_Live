@@ -1,0 +1,21 @@
+{
+  "name": "collaborative-whiteboard-frontend",
+  "version": 2,
+  "builds": [
+    {
+      "src": "Frontend/WHITEBOARD-APPLICATION/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "Frontend/WHITEBOARD-APPLICATION/$1"
+    }
+  ],
+  "buildCommand": "cd Frontend/WHITEBOARD-APPLICATION && npm run build",
+  "outputDirectory": "Frontend/WHITEBOARD-APPLICATION/build"
+}
