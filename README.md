@@ -76,87 +76,32 @@ Visit http://localhost:3000 to access the application.
 
 ## 🏗️ Architecture
 
-### Frontend Structure
 ```
-Frontend/
-└── WHITEBOARD-APPLICATION/
-    ├── public/                           # Static assets
-    │   ├── favicon.ico
-    │   ├── index.html                    # Main HTML template
-    │   ├── manifest.json                 # PWA configuration
-    │   ├── logo192.png                  # App icons
-    │   └── logo512.png
-    │
-    ├── src/
-    │   ├── components/                   # Reusable UI components
-    │   │   ├── Board/                    # Canvas component
-    │   │   │   ├── index.js             # Drawing logic & event handlers
-    │   │   │   └── index.module.css     # Board-specific styles
-    │   │   ├── Toolbar/                  # Drawing tools panel
-    │   │   │   ├── index.js             # Tool selection & controls
-    │   │   │   └── index.module.css     # Toolbar styling
-    │   │   └── Toolbox/                  # Color & size controls
-    │   │       ├── index.js             # Color picker & brush settings
-    │   │       └── index.module.css     # Toolbox styling
-    │   │
-    │   ├── pages/                       # Application pages
-    │   │   ├── Canvas.js                # Main whiteboard page
-    │   │   ├── Login.js                 # User authentication
-    │   │   ├── Login.css
-    │   │   ├── Profile.js               # User profile management
-    │   │   ├── Profile.css
-    │   │   ├── Register.js              # User registration
-    │   │   └── Register.css
-    │   │
-    │   ├── store/                       # State management
-    │   │   ├── auth-context.js          # Authentication state
-    │   │   ├── board-context.js         # Canvas state
-    │   │   ├── BoardProvider.js         # Canvas state provider
-    │   │   ├── toolbox-context.js       # Tool settings state
-    │   │   └── ToolboxProvider.js       # Tool state provider
-    │   │
-    │   ├── utils/                       # Helper functions
-    │   │   ├── api.js                   # API service calls
-    │   │   ├── element.js               # Canvas element helpers
-    │   │   ├── math.js                  # Mathematical utilities
-    │   │   └── socket.js                # WebSocket configuration
-    │   │
-    │   ├── App.js                       # Root component
-    │   ├── App.css                      # Global styles
-    │   ├── index.js                     # Entry point
-    │   ├── index.css                    # Base styles
-    │   ├── config.js                    # App configuration
-    │   └── constants.js                 # Global constants
-    │
-    ├── package.json                     # Dependencies & scripts
-    ├── tailwind.config.js               # TailwindCSS config
-    └── postcss.config.js                # PostCSS config
-
-### Backend Structure
-```
-Backend/
-├── controller/                          # Request handlers
-│   ├── canvasController.js             # Canvas operations
-│   └── userController.js               # User management
-│
-├── middleware/                          # Custom middleware
-│   ├── authMiddleware.js               # JWT authentication
-│   ├── checkCanvasAccess.js           # Canvas permissions
-│   └── socketAuth.js                   # WebSocket auth
-│
-├── models/                             # Database schemas
-│   ├── canvasModel.js                 # Canvas data model
-│   ├── postModel.js                   # Posts/Comments model
-│   ├── tokenModel.js                  # JWT token model
-│   └── userModel.js                   # User model
-│
-├── routes/                             # API routes
-│   ├── canvasRoute.js                 # Canvas endpoints
-│   └── userRoute.js                   # User endpoints
-│
-├── db.js                              # Database configuration
-├── index.js                           # Server entry point
-└── package.json                       # Backend dependencies
+FULL-STACK-WHITEBOARD/
+├── Backend/
+│   ├── controller/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── db.js
+│   ├── index.js
+│   ├── package.json
+│   ├── .env
+│   └── .env.example
+├── Frontend/
+│   └── WHITEBOARD-APPLICATION/
+│       ├── public/
+│       ├── src/
+│       │   ├── components/
+│       │   ├── pages/
+│       │   │   └── Register.js
+│       │   ├── store/
+│       │   ├── App.js
+│       │   └── index.js
+│       ├── package.json
+│       ├── .env
+│       └── .env.example
+└── README.md
 ```
 
 ### 🏗️ Architectural Overview
