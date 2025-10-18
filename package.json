@@ -1,0 +1,30 @@
+{
+  "name": "collaborative-whiteboard",
+  "version": "1.0.0",
+  "description": "A full-stack collaborative whiteboard application",
+  "main": "index.js",
+  "scripts": {
+    "install-backend": "cd Backend && npm install",
+    "install-frontend": "cd Frontend/WHITEBOARD-APPLICATION && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "start-backend": "cd Backend && npm start",
+    "start-frontend": "cd Frontend/WHITEBOARD-APPLICATION && npm start",
+    "dev-backend": "cd Backend && npm run dev",
+    "dev-frontend": "cd Frontend/WHITEBOARD-APPLICATION && npm start",
+    "build-frontend": "cd Frontend/WHITEBOARD-APPLICATION && npm run build",
+    "test-backend": "cd Backend && npm test",
+    "test-frontend": "cd Frontend/WHITEBOARD-APPLICATION && npm test",
+    "test-all": "npm run test-backend && npm run test-frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nishkarsh0Sharma/Full_Stack_Collab_Whiteboard_Live.git"
+  },
+  "keywords": ["whiteboard", "collaboration", "real-time", "drawing", "MERN"],
+  "author": "Nishkarsh Sharma",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
