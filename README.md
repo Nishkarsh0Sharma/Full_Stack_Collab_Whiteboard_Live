@@ -1,34 +1,37 @@
-# 🎨 Interactive Whiteboard Application
+# 🎨 Collaborative Whiteboard Application
 
-A full-stack collaborative whiteboard application built with the MERN stack (MongoDB, Express.js, React.js, Node.js) that enables real-time drawing, collaboration, and user authentication.
+![React](https://img.shields.io/badge/React-18.2.0-blue) ![Node.js](https://img.shields.io/badge/Node.js-18.x-green) ![MongoDB](https://img.shields.io/badge/MongoDB-Latest-brightgreen) ![Socket.io](https://img.shields.io/badge/Socket.io-4.x-orange) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.x-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Build](https://img.shields.io/badge/Build-Passing-brightgreen)
 
-![Whiteboard Demo](https://img.shields.io/badge/React-18.2.0-blue) ![Node.js](https://img.shields.io/badge/Node.js-18.x-green) ![MongoDB](https://img.shields.io/badge/MongoDB-Latest-brightgreen) ![Socket.io](https://img.shields.io/badge/Socket.io-4.x-orange) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.x-blue)
+## 📖 Introduction
 
-## 🌟 Features
+Welcome to the Collaborative Whiteboard Application, a powerful full-stack MERN application that revolutionizes real-time collaborative drawing and brainstorming. Built with modern web technologies, this platform offers a seamless digital canvas experience with real-time collaboration, robust user authentication, and intuitive drawing tools.
 
-### 🎨 Drawing Tools & Canvas Features
-- Rich set of drawing tools: Brush, Line, Rectangle, Circle, Arrow, and Text
-- Real-time collaborative drawing with Socket.io
-- Customizable brush sizes and colors
-- Smart eraser tool with shape detection
-- Undo/Redo functionality
-- Export canvas as image
+Perfect for remote teams, educators, and creative professionals who need a reliable platform for visual collaboration and ideation!
 
-### 👥 User Management & Authentication
-- Secure user registration and login system
-- JWT-based authentication
-- Personal profile management
-- Canvas access control and sharing
-- Saved canvas history
+## ✨ Key Features
 
-### 💻 Technical Features
-- Real-time collaboration using Socket.io
-- MongoDB for persistent storage
-- RESTful API architecture
-- JWT-based authentication middleware
-- Responsive design with TailwindCSS
-- Canvas element manipulation and rendering
-- WebSocket-based live updates
+### 🎨 **Drawing & Collaboration Tools**
+- **🖌️ Real-time Drawing**: Synchronized drawing experience with instant updates across all connected users
+- **📏 Shape Tools**: Precise drawing tools including line, rectangle, circle, and arrow tools
+- **✍️ Freehand Tool**: Smooth freehand drawing with pressure sensitivity
+- **📝 Text Tool**: Add and edit text annotations in real-time
+- **🧹 Smart Eraser**: Intelligent shape and stroke detection for precise erasing
+- **↩️ Undo/Redo**: Comprehensive history management for all actions
+
+### � **Security & User Management**
+- **👤 User Authentication**: Secure registration and login system using JWT tokens
+- **🔒 Protected Routes**: Role-based access control for canvas and user management
+- **👥 Profile Management**: Personalized user profiles with saved preferences
+- **🤝 Collaboration Control**: Fine-grained access control for shared canvases
+- **📊 Session Management**: Robust token-based session handling
+
+### ⚡ **Technical Excellence**
+- **🔄 WebSocket Integration**: Real-time updates using Socket.io
+- **🗄️ MongoDB Architecture**: Efficient data storage and retrieval
+- **🛡️ Secure API**: RESTful API with JWT authentication
+- **📱 Responsive Design**: Seamless experience across all devices
+- **🎨 Modern UI**: Clean interface styled with TailwindCSS
+- **⚡ Optimized Performance**: Efficient canvas rendering and state management
 
 ## 🚀 Getting Started
 
@@ -41,8 +44,8 @@ A full-stack collaborative whiteboard application built with the MERN stack (Mon
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/whiteboard.git
-cd whiteboard
+git clone https://github.com/Nishkarsh0Sharma/Full_Stack_Collab_Whiteboard_Live.git
+cd Full_Stack_Collab_Whiteboard_Live
 ```
 
 2. Install Backend Dependencies
@@ -77,25 +80,141 @@ Visit http://localhost:3000 to access the application.
 ```
 Frontend/
 └── WHITEBOARD-APPLICATION/
+    ├── public/                           # Static assets
+    │   ├── favicon.ico
+    │   ├── index.html                    # Main HTML template
+    │   ├── manifest.json                 # PWA configuration
+    │   ├── logo192.png                  # App icons
+    │   └── logo512.png
+    │
     ├── src/
-    │   ├── components/           # Reusable UI components
-    │   │   ├── Board/           # Canvas and drawing logic
-    │   │   ├── Toolbar/         # Drawing tools interface
-    │   │   └── Toolbox/         # Color and size controls
-    │   ├── pages/               # Main application pages
-    │   ├── store/               # Context providers and state
-    │   └── utils/               # Helper functions
-    └── public/                  # Static assets
-```
+    │   ├── components/                   # Reusable UI components
+    │   │   ├── Board/                    # Canvas component
+    │   │   │   ├── index.js             # Drawing logic & event handlers
+    │   │   │   └── index.module.css     # Board-specific styles
+    │   │   ├── Toolbar/                  # Drawing tools panel
+    │   │   │   ├── index.js             # Tool selection & controls
+    │   │   │   └── index.module.css     # Toolbar styling
+    │   │   └── Toolbox/                  # Color & size controls
+    │   │       ├── index.js             # Color picker & brush settings
+    │   │       └── index.module.css     # Toolbox styling
+    │   │
+    │   ├── pages/                       # Application pages
+    │   │   ├── Canvas.js                # Main whiteboard page
+    │   │   ├── Login.js                 # User authentication
+    │   │   ├── Login.css
+    │   │   ├── Profile.js               # User profile management
+    │   │   ├── Profile.css
+    │   │   ├── Register.js              # User registration
+    │   │   └── Register.css
+    │   │
+    │   ├── store/                       # State management
+    │   │   ├── auth-context.js          # Authentication state
+    │   │   ├── board-context.js         # Canvas state
+    │   │   ├── BoardProvider.js         # Canvas state provider
+    │   │   ├── toolbox-context.js       # Tool settings state
+    │   │   └── ToolboxProvider.js       # Tool state provider
+    │   │
+    │   ├── utils/                       # Helper functions
+    │   │   ├── api.js                   # API service calls
+    │   │   ├── element.js               # Canvas element helpers
+    │   │   ├── math.js                  # Mathematical utilities
+    │   │   └── socket.js                # WebSocket configuration
+    │   │
+    │   ├── App.js                       # Root component
+    │   ├── App.css                      # Global styles
+    │   ├── index.js                     # Entry point
+    │   ├── index.css                    # Base styles
+    │   ├── config.js                    # App configuration
+    │   └── constants.js                 # Global constants
+    │
+    ├── package.json                     # Dependencies & scripts
+    ├── tailwind.config.js               # TailwindCSS config
+    └── postcss.config.js                # PostCSS config
 
 ### Backend Structure
 ```
 Backend/
-├── controller/                  # Request handlers
-├── middleware/                  # Auth and access control
-├── models/                     # MongoDB schemas
-└── routes/                     # API endpoints
+├── controller/                          # Request handlers
+│   ├── canvasController.js             # Canvas operations
+│   └── userController.js               # User management
+│
+├── middleware/                          # Custom middleware
+│   ├── authMiddleware.js               # JWT authentication
+│   ├── checkCanvasAccess.js           # Canvas permissions
+│   └── socketAuth.js                   # WebSocket auth
+│
+├── models/                             # Database schemas
+│   ├── canvasModel.js                 # Canvas data model
+│   ├── postModel.js                   # Posts/Comments model
+│   ├── tokenModel.js                  # JWT token model
+│   └── userModel.js                   # User model
+│
+├── routes/                             # API routes
+│   ├── canvasRoute.js                 # Canvas endpoints
+│   └── userRoute.js                   # User endpoints
+│
+├── db.js                              # Database configuration
+├── index.js                           # Server entry point
+└── package.json                       # Backend dependencies
 ```
+
+### 🏗️ Architectural Overview
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        Frontend                             │
+│                                                            │
+│    ┌──────────────┐   ┌───────────────┐   ┌──────────┐    │
+│    │   Canvas     │   │    Toolbar    │   │ Toolbox  │    │
+│    │  Component   │◄──┤   Component   │◄──┤Component │    │
+│    └──────┬───────┘   └───────────────┘   └──────────┘    │
+│           │                    ▲                           │
+│           │                    │                           │
+│    ┌──────▼──────┐     ┌──────┴──────┐    ┌──────────┐   │
+│    │   Board     │     │   Toolbox   │    │   Auth   │   │
+│    │  Context    │     │   Context   │    │ Context  │   │
+│    └──────┬──────┘     └────────────┘    └────┬─────┘   │
+│           │                                    │         │
+└───────────┼────────────────────────────────────┼─────────┘
+            │                                    │
+            ▼                                    ▼
+┌──────────────────────────────────────────────────────────┐
+│                      WebSocket & HTTP                     │
+└──────────────────────────┬───────────────────────────────┘
+                           │
+┌──────────────────────────▼───────────────────────────────┐
+│                        Backend                            │
+│                                                          │
+│    ┌──────────────┐   ┌───────────────┐   ┌──────────┐  │
+│    │    Canvas    │   │     User      │   │  Token   │  │
+│    │ Controller   │   │  Controller   │   │ Manager  │  │
+│    └──────┬───────┘   └───────┬───────┘   └────┬────┘  │
+│           │                   │                 │       │
+│    ┌──────▼───────┐   ┌──────▼──────┐   ┌────▼────┐  │
+│    │    Canvas    │   │    User     │   │  Token   │  │
+│    │    Model     │   │    Model    │   │  Model   │  │
+│    └──────────────┘   └────────────┘   └─────────┘  │
+│                                                      │
+└──────────────────────────────────────────────────────┘
+```
+
+#### Key Components Interaction:
+
+1. **Frontend-Backend Communication**:
+   - RESTful API calls for CRUD operations
+   - WebSocket connections for real-time updates
+   - JWT-based authentication for secure communication
+
+2. **State Management**:
+   - Context API for global state management
+   - Real-time sync between multiple users
+   - Optimistic updates for better UX
+
+3. **Data Flow**:
+   - Canvas events → Board Context → WebSocket → Server
+   - Server → WebSocket → Board Context → Canvas Update
+   - User Actions → Auth Context → API → Token Management
 
 ## 🔧 Technologies Used
 
@@ -127,5 +246,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by [Nishkarsh Sharma](https://github.com/Nishkarsh0Sharma)
 
